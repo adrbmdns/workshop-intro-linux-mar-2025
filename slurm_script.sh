@@ -1,3 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name=variant-call
+#SBATCH --output=/mnt/data/dayhoff/home/u1234567/variant-calling/slurm_job.out
+#SBATCH --error=/mnt/data/dayhoff/home/u1234567/variant-calling/slurm_job.err
+#SBATCH --partition=Standard
+#SBATCH --time=1:00:00 # [days-hh:mm:ss]
+#SBATCH --mem=20G
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mail-user=u1234567@anu.edu.au
+#SBATCH --mail-type=ALL 
+
+source /opt/conda/bin/activate /mnt/data/dayhoff/home/u1234567/.conda/envs/ecoli-vc 
+
 HOME=/home/jiajia
 
 rawDIR=$HOME/variant-calling/raw-fastq
