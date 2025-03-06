@@ -52,4 +52,6 @@ bcftools mpileup -O v -o ${raw_variants} -f $genome ${sorted_bam}
 bcftools call --ploidy 1 -m -v -o $variants ${raw_variants}
 vcfutils.pl varFilter $variants > ${final_variants}
 
+samtools index ${sorted_bam}
+
 done 
